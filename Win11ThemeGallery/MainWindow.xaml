@@ -35,12 +35,14 @@
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="BackButton" 
                                 Margin="10 0 5 5"
-                                
-                                Command="{Binding ViewModel.BackCommand}"/>
+                                Command="{Binding ViewModel.BackCommand}">
+                            <TextBlock FontFamily="Segoe UI Symbol" Text="&#8592;" VerticalAlignment="Center"/>
+                        </Button>
                         <Button x:Name="ForwardButton" 
                                 Margin="5 0 0 5"
-                                
-                                Command="{Binding ViewModel.ForwardCommand}"/>
+                                Command="{Binding ViewModel.ForwardCommand}">
+                            <TextBlock FontFamily="Segoe UI Symbol" Text="&#x2192;" VerticalAlignment="Center"/>
+                        </Button>
                     </StackPanel>
                     <TextBox x:Name="SearchBox" 
                              Margin="10" Width="250"
