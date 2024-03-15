@@ -38,14 +38,14 @@
             Margin="0,36,0,0"
             HeaderText="A WPF TextBox."
             XamlCode="&lt;TextBox PlaceholderText=&quot;Type something...&quot; /&gt;">
-            <TextBox PlaceholderText="Type something..."/>
+            <TextBox />
         </controls:ControlExample> 
 
         <controls:ControlExample
             Margin="0,36,0,0"
             HeaderText="A multi-line TextBox."
             XamlCode="&lt;TextBox PlaceholderText=&quot;Type something...&quot;TextWrapping=&quot;Wrap&quot; /&gt;">
-                    <TextBox PlaceholderText="Type something..." TextWrapping="Wrap" IsReadOnly="True" />
+                    <TextBox TextWrapping="Wrap" IsReadOnly="True" />
         </controls:ControlExample>
     </StackPanel>
 

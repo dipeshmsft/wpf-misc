@@ -44,7 +44,6 @@
                     </StackPanel>
                     <TextBox x:Name="SearchBox" 
                              Margin="10" Width="250"
-                             PlaceholderText="Search..."
                              KeyUp="SearchBox_KeyUp"
                              LostFocus="SearchBox_LostFocus"
                              />
