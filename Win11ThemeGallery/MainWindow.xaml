@@ -41,7 +41,7 @@
                         <Button x:Name="ForwardButton" 
                                 Margin="5 0 0 5"
                                 Command="{Binding ViewModel.ForwardCommand}">
-                            <TextBlock FontFamily="Segoe UI Symbol" Text="&#x2192;" VerticalAlignment="Center"/>
+                            <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xF0AF;" VerticalAlignment="Center" FontSize="16" />
                         </Button>
                     </StackPanel>
                     <TextBox x:Name="SearchBox" 
