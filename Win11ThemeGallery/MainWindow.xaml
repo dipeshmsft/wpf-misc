@@ -36,7 +36,7 @@
                         <Button x:Name="BackButton" 
                                 Margin="10 0 5 5"
                                 Command="{Binding ViewModel.BackCommand}">
-                            <TextBlock FontFamily="Segoe UI Symbol" Text="&#8592;" VerticalAlignment="Center"/>
+                            <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xF0B0;" VerticalAlignment="Center" FontSize="16"/>
                         </Button>
                         <Button x:Name="ForwardButton" 
                                 Margin="5 0 0 5"
