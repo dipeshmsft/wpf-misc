@@ -148,4 +148,6 @@
     <Color x:Key="SystemColorHighlightTextColor">#FF00FF</Color>
     <Color x:Key="SystemColorHotlightColor">#FF00FF</Color>
     <Color x:Key="SystemColorGrayTextColor">#FF00FF</Color>
+
+    <Color x:Key="TemporaryTextFillColorDisabled">#5DFEFEFE</Color>
 </ResourceDictionary>

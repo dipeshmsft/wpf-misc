@@ -1,0 +1,245 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:ut="clr-namespace:Fluent.UITests.TestUtilities">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ut:TestDictionary Name="Light">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Light.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!--Contextmenu-->
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />                    
+                    <SolidColorBrush x:Key="TextboxCaretBrush" Color="{StaticResource TextFillColorPrimary}" />
+                    <Thickness x:Key="TextBoxBorderThemeThickness">1,1,1,1</Thickness>
+                    <HorizontalAlignment x:Key="TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="TextBox_VerticalAlignment">Stretch</VerticalAlignment>                                     
+                    <Thickness x:Key="TextControlThemePadding">10,5,10,6</Thickness>
+                    <HorizontalAlignment x:Key="HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="VerticalContentAlignment">Top</VerticalAlignment>
+                    <!--borderbrush-->
+                    <!--<LinearGradientBrush x:Key="TextControlElevationBorderBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,2">
+                        <LinearGradientBrush.RelativeTransform>
+                            <ScaleTransform ScaleY="-1" CenterY="0.5" />
+                        </LinearGradientBrush.RelativeTransform>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.5" Color="#72000000"/>
+                            <GradientStop Offset="1.0" Color="#0F000000" /> 
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>-->
+                    <!--<ScaleTransform x:Key="TextControlElevationBorderBrush" ScaleY="-1" CenterY="0.5"/>
+
+                    <sys:Double x:Key="GradientStop1_Offset">0.5</sys:Double>
+                    <SolidColorBrush x:Key="GradientStop1_Color" Color="#72000000" />
+                    <sys:Double x:Key="GradientStop2_Offset">1.0</sys:Double>
+                    <SolidColorBrush x:Key="GradientStop2_Color" Color="#0F000000" />-->
+                    
+                    <!-- TextBox : ContentBorder Properties -->
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinWidth">0</sys:Double>
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ContentBorder_TextControlThemePadding">0</Thickness>
+                    <HorizontalAlignment x:Key="ContentBorder_TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentBorder_TextBox_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />
+                    <SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <Thickness x:Key="ContentBorder_ThemeThickness">1,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--PART_ContentHost : ScrollViewer-->
+                    <!--<ScrollViewer x:Key="PART_ContentHost_TextBox_VerticalAlignment" VerticalAlignment="Center"/>-->
+                    <VerticalAlignment x:Key="PART_ContentHost_TextBox_VerticalAlignment">Center</VerticalAlignment>                    
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_CanContentScroll">False</sys:Boolean>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_HorizontalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_VerticalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsDeferredScrollingEnabled">False</sys:Boolean>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsTabStop">False</sys:Boolean>
+                    <Thickness x:Key="PART_ContentHost_TextBox_Padding">10,5,6,6</Thickness>
+                    <SolidColorBrush x:Key="TextElement_Foreground" Color="{StaticResource ControlFillColorDefault}" />                   
+                    
+                    <!-- TextBox : AccentBorder Properties -->
+                    <HorizontalAlignment x:Key="accentBorder_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="accentBorder_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="accentBorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <Thickness x:Key="TextBoxAccentBorderThemeThickness">0,0,0,1</Thickness>
+                    <CornerRadius x:Key="accentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ClearButton properties-->
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinWidth">24.0</sys:Double>
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ClearButton_Margin">0,0,4,0</Thickness>
+                    <Thickness x:Key="ClearButton_Padding">0,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ClearButton_Background" Color="Transparent" />
+                    <SolidColorBrush x:Key="ClearButton_BorderBrush" Color="Transparent" />
+                    <Cursor x:Key="ClearButton_Cursor">Arrow</Cursor>
+                    <sys:Boolean x:Key="ClearButton_IsTabStop">False</sys:Boolean>
+                    <SolidColorBrush x:Key="ClearButton_Foreground" Color="{StaticResource TextFillColorSecondary}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDisabled}" />
+                    <SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="AccentBorder_BackgroundDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TemporaryTextFillColorDisabled}" />
+                    <Thickness x:Key="ClearButton_Margin">0</Thickness>
+                    <Visibility x:Key="ClearButton_Visibility">Collapsed</Visibility>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+
+        <ut:TestDictionary Name="Dark">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Dark.Test.xaml" />
+                <ut:TestDictionary Name="Default">
+                    <!--Contextmenu-->
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />
+                    <SolidColorBrush x:Key="TextboxCaretBrush" Color="{StaticResource TextFillColorPrimary}" />
+                    <Thickness x:Key="TextBoxBorderThemeThickness">1,1,1,1</Thickness>
+                    <HorizontalAlignment x:Key="TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="TextBox_VerticalAlignment">Stretch</VerticalAlignment>
+                   
+                    <HorizontalAlignment x:Key="HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="VerticalContentAlignment">Top</VerticalAlignment>
+                    <!--borderbrush-->
+                  
+                    <!-- TextBox : ContentBorder Properties -->
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinWidth">0</sys:Double>
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ContentBorder_TextControlThemePadding">0</Thickness>
+                    <HorizontalAlignment x:Key="ContentBorder_TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentBorder_TextBox_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />
+                    <!--<SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrongStrokeColorDefault}" />-->
+                    <Thickness x:Key="ContentBorder_ThemeThickness">1,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--PART_ContentHost : ScrollViewer-->
+                    <!--<ScrollViewer x:Key="PART_ContentHost_TextBox_VerticalAlignment" VerticalAlignment="Center"/>-->
+                    <VerticalAlignment x:Key="PART_ContentHost_TextBox_VerticalAlignment">Center</VerticalAlignment>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_CanContentScroll">False</sys:Boolean>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_HorizontalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_VerticalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsDeferredScrollingEnabled">False</sys:Boolean>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsTabStop">False</sys:Boolean>
+                    <Thickness x:Key="PART_ContentHost_TextBox_Padding">10,5,10,6</Thickness>
+                    <SolidColorBrush x:Key="TextElement_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+
+                     <!--TextBox : AccentBorder Properties--> 
+                    <HorizontalAlignment x:Key="accentBorder_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="accentBorder_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="accentBorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <Thickness x:Key="TextBoxAccentBorderThemeThickness">0,0,0,1</Thickness>
+                    <CornerRadius x:Key="accentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ClearButton properties-->
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinWidth">24.0</sys:Double>
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ClearButton_Margin">0,0,4,0</Thickness>
+                    <Thickness x:Key="ClearButton_Padding">0,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ClearButton_Background" Color="Transparent" />
+                    <SolidColorBrush x:Key="ClearButton_BorderBrush" Color="Transparent" />
+                    <Cursor x:Key="ClearButton_Cursor">Arrow</Cursor>
+                    <sys:Boolean x:Key="ClearButton_IsTabStop">False</sys:Boolean>
+                    <SolidColorBrush x:Key="ClearButton_Foreground" Color="{StaticResource TextFillColorSecondary}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDisabled}" />
+                    <SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="AccentBorder_BackgroundDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorDisabled}" /> <!--TemporaryTextFillColorDisabled-->
+                    <Thickness x:Key="ClearButton_Margin">0</Thickness>
+                    <Visibility x:Key="ClearButton_Visibility">Collapsed</Visibility>
+                </ut:TestDictionary>
+
+
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+
+        <ut:TestDictionary Name="HC">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!--Contextmenu-->
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource ControlFillColorDefault}" /> <!--No background color for HC-->
+                    <SolidColorBrush x:Key="TextboxCaretBrush" Color="{StaticResource TextFillColorPrimary}" />
+                    <Thickness x:Key="TextBoxBorderThemeThickness">1,1,1,1</Thickness>
+                    <HorizontalAlignment x:Key="TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="TextBox_VerticalAlignment">Stretch</VerticalAlignment>
+
+                    <HorizontalAlignment x:Key="HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="VerticalContentAlignment">Top</VerticalAlignment>
+                    <!--borderbrush-->
+
+                    <!-- TextBox : ContentBorder Properties -->
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinWidth">0</sys:Double>
+                    <sys:Double x:Key="ContentBorder_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ContentBorder_TextControlThemePadding">0</Thickness>
+                    <HorizontalAlignment x:Key="ContentBorder_TextBox_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentBorder_TextBox_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />
+                    <!--<SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrongStrokeColorDefault}" />-->
+                    <Thickness x:Key="ContentBorder_ThemeThickness">1,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--PART_ContentHost : ScrollViewer-->
+                    <!--<ScrollViewer x:Key="PART_ContentHost_TextBox_VerticalAlignment" VerticalAlignment="Center"/>-->
+                    <VerticalAlignment x:Key="PART_ContentHost_TextBox_VerticalAlignment">Center</VerticalAlignment>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_CanContentScroll">False</sys:Boolean>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_HorizontalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <ScrollBarVisibility x:Key="PART_ContentHost_TextBox_VerticalScrollBarVisibility">Hidden</ScrollBarVisibility>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsDeferredScrollingEnabled">False</sys:Boolean>
+                    <sys:Boolean x:Key="PART_ContentHost_TextBox_IsTabStop">False</sys:Boolean>
+                    <Thickness x:Key="PART_ContentHost_TextBox_Padding">10,5,10,6</Thickness>
+                    <SolidColorBrush x:Key="TextElement_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+
+                    <!--TextBox : AccentBorder Properties-->
+                    <HorizontalAlignment x:Key="accentBorder_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="accentBorder_VerticalAlignment">Stretch</VerticalAlignment>
+                    <SolidColorBrush x:Key="accentBorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <Thickness x:Key="TextBoxAccentBorderThemeThickness">0,0,0,1</Thickness>
+                    <CornerRadius x:Key="accentBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ClearButton properties-->
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinWidth">24.0</sys:Double>
+                    <sys:Double x:Key="ClearButton_TextControlThemeMinHeight">24.0</sys:Double>
+                    <Thickness x:Key="ClearButton_Margin">0,0,4,0</Thickness>
+                    <Thickness x:Key="ClearButton_Padding">0,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ClearButton_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ClearButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ClearButton_Background" Color="Transparent" />
+                    <SolidColorBrush x:Key="ClearButton_BorderBrush" Color="Transparent" />
+                    <Cursor x:Key="ClearButton_Cursor">Arrow</Cursor>
+                    <sys:Boolean x:Key="ClearButton_IsTabStop">False</sys:Boolean>
+                    <SolidColorBrush x:Key="ClearButton_Foreground" Color="{StaticResource TextFillColorSecondary}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ContentBorder_TextControlBackground" Color="{StaticResource ControlFillColorDisabled}" />
+                    <SolidColorBrush x:Key="ContentBorder_BorderBrush" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="AccentBorder_BackgroundDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!--TemporaryTextFillColorDisabled-->
+                    <Thickness x:Key="ClearButton_Margin">0</Thickness>
+                    <Visibility x:Key="ClearButton_Visibility">Collapsed</Visibility>
+                </ut:TestDictionary>
+
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
