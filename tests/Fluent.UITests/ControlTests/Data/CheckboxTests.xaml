@@ -1,0 +1,345 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:ut="clr-namespace:Fluent.UITests.TestUtilities">
+    <ResourceDictionary.MergedDictionaries>
+        <ut:TestDictionary Name="Light">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Light.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Checkbox unchecked Control Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="{StaticResource SubtleFillColorTransparent}" />
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource SubtleFillColorTransparent}" />
+                    <Thickness x:Key="CheckBox_Thickness">1</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Center</VerticalAlignment>
+                    <!--<FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>-->
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">True</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">32</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">120</sys:Double>
+                    <CornerRadius x:Key="CheckBox_CornerRadius">4,4,4,4</CornerRadius>
+                    <Cursor x:Key="CheckBox_Cursor">Hand</Cursor>
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <sys:Double x:Key="CheckBoxSize">20</sys:Double>
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource ControlAltFillColorSecondary}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource ControlStrongStrokeColorDefault}" />
+
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,0,0</Thickness>
+
+                    <!-- Checkbox: Textblock-->
+                    <sys:Double x:Key="CheckBoxIcon_Fontsize">12</sys:Double>
+                    <HorizontalAlignment x:Key="CheckboxTextblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="CheckboxTextblock_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="CheckboxTextblock_Margin">0</Thickness>
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Collapsed</Visibility>
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE73E;</sys:String>
+                    <!--<FontFamily x:Key="CheckBoxTextblock_FontFamily" ></FontFamily>-->
+                    <!--<FontWeight x:Key="CheckBoxTextblock_Fontweight">Normal</FontWeight>-->
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Checked">
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Indeterminate">
+                    <!-- __Content icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE9AE;</sys:String>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="UncheckedDisabled">
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!-- __Content border icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource ControlAltFillColorDisabled}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource ControlStrongStrokeColorDisabled}" />
+                    <!-- Checkbox: Textblock-->
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!--Foreground property for contentpresenter is not available-->
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CheckedDisabled">
+                    <!--Not defined in WPF Xaml-->
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!-- __Content border icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource AccentFillColorDisabled}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource ControlStrongStrokeColorDisabled}" />
+                    <!-- Checkbox: Textblock-->
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="IndeterminateDisabled">
+                    <!--Not defined in WPF Xaml-->
+                    <!-- __Content icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemAccentColorDark1}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE9AE;</sys:String>
+                    <!--Foreground property for contentpresenter is not available-->
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="Aqua" />
+                    <!--<SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="Black" />-->
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="Maroon" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="Green" />
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CustomCheckbox">
+                    <Thickness x:Key="CheckBox_Thickness">4</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,10,10</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Bottom</VerticalAlignment>
+                    <!--<FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>-->
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">False</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">40</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">150</sys:Double>
+                    <!--<CornerRadius x:Key="CheckBox_CornerRadius">10,10,10,10</CornerRadius>-->
+                    <!--<Cursor x:Key="CheckBox_Cursor">Hand</Cursor>-->
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,10,10</Thickness>
+                </ut:TestDictionary>
+
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="Dark">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Dark.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Checkbox unchecked Control Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="{StaticResource SubtleFillColorTransparent}" />
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource SubtleFillColorTransparent}" />
+                    <Thickness x:Key="CheckBox_Thickness">1</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Center</VerticalAlignment>
+                    <FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">True</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">32</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">120</sys:Double>
+                    <CornerRadius x:Key="CheckBox_CornerRadius">4,4,4,4</CornerRadius>
+                    <Cursor x:Key="CheckBox_Cursor">Hand</Cursor>
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <sys:Double x:Key="CheckBoxSize">20</sys:Double>
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource ControlAltFillColorSecondary}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource ControlStrongStrokeColorDefault}" />
+
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,0,0</Thickness>
+
+                    <!-- Checkbox: Textblock-->
+                    <sys:Double x:Key="CheckBoxIcon_Fontsize">12</sys:Double>
+                    <HorizontalAlignment x:Key="CheckboxTextblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="CheckboxTextblock_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="CheckboxTextblock_Margin">0</Thickness>
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Collapsed</Visibility>
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE73E;</sys:String>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Checked">
+
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemAccentColorLight2}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemAccentColorLight2}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Indeterminate">
+
+                    <!-- __Content icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemAccentColorLight2}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemAccentColorLight2}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE9AE;</sys:String>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="UncheckedDisabled">
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!-- __Content border icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource ControlAltFillColorDisabled}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource ControlStrongStrokeColorDisabled}" />
+                    <!-- Checkbox: Textblock-->
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="Aqua" />
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="Maroon" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="Green" />
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CustomCheckbox">
+                    <Thickness x:Key="CheckBox_Thickness">4</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,10,10</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Bottom</VerticalAlignment>
+                    <!--<FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>-->
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">False</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">40</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">150</sys:Double>
+                    <!--<CornerRadius x:Key="CheckBox_CornerRadius">10,10,10,10</CornerRadius>-->
+                    <!--<Cursor x:Key="CheckBox_Cursor">Hand</Cursor>-->
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,10,10</Thickness>
+                </ut:TestDictionary>
+                
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="HC">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Checkbox unchecked Control Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="{StaticResource SystemColorWindowColor}" />
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource SystemColorWindowColor}" />
+                    <Thickness x:Key="CheckBox_Thickness">1</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Center</VerticalAlignment>
+                    <FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">True</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">32</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">120</sys:Double>
+                    <CornerRadius x:Key="CheckBox_CornerRadius">4,4,4,4</CornerRadius>
+                    <Cursor x:Key="CheckBox_Cursor">Hand</Cursor>
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <sys:Double x:Key="CheckBoxSize">20</sys:Double>
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemColorButtonFaceColor}" />
+
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemColorButtonTextColor}" />
+
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,0,0</Thickness>
+
+                    <!-- Checkbox: Textblock-->
+                    <sys:Double x:Key="CheckBoxIcon_Fontsize">12</sys:Double>
+                    <HorizontalAlignment x:Key="CheckboxTextblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="CheckboxTextblock_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="CheckboxTextblock_Margin">0</Thickness>
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Collapsed</Visibility>
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource SystemColorButtonFaceColor}" />
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE73E;</sys:String>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Checked">
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Indeterminate">
+                    <!-- __Content icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!-- Checkbox: Textblock-->
+                    <Visibility x:Key="CheckboxTextblock_Visibility">Visible</Visibility>
+                    <sys:String x:Key="CheckBoxTextblock_Text">&#xE9AE;</sys:String>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="UncheckedDisabled">
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource TextFillColorDisabled}" />
+                    <!-- __Content border icon properties-->
+                    <SolidColorBrush x:Key="CheckBoxBackground_Fill" Color="{StaticResource SystemColorWindowColor}" />
+                    <!-- Checkbox : stroke border Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush_Stroke" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <!-- Checkbox: Textblock-->
+                    <SolidColorBrush x:Key="CheckBoxTextblock_Foreground" Color="{StaticResource SystemColorGrayTextColor}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <!-- Checkbox : Control border Icon Properties -->
+                    <SolidColorBrush x:Key="CheckBoxBackground" Color="Aqua" />
+                    <SolidColorBrush x:Key="CheckBoxForeground" Color="Maroon" />
+                    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="Green" />
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CustomCheckbox">
+                    <Thickness x:Key="CheckBox_Thickness">4</Thickness>
+                    <Thickness x:Key="CheckBox_Padding">8,5,10,10</Thickness>
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalAlignment">Bottom</VerticalAlignment>
+                    <!--<FontWeight x:Key="CheckBox_Fontweight">Normal</FontWeight>-->
+                    <HorizontalAlignment x:Key="Checkbox_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Checkbox_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Boolean x:Key="Checkbox_IsTabStop">False</sys:Boolean>
+                    <sys:Double x:Key="CheckBox_Height">40</sys:Double>
+                    <sys:Double x:Key="CheckBox_MinWidth">150</sys:Double>
+                    <!--<CornerRadius x:Key="CheckBox_CornerRadius">10,10,10,10</CornerRadius>-->
+                    <!--<Cursor x:Key="CheckBox_Cursor">Hand</Cursor>-->
+                    <!-- Checkbox : ContentPresenter Properties -->
+                    <sys:Boolean x:Key="ContentPresenter_RecognizesAccessKey">True</sys:Boolean>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,5,10,10</Thickness>
+                </ut:TestDictionary>
+                
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
