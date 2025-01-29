@@ -1,6 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
 using System.Xml;
+using System.Xml.Schema;
+using ExtType = WinUIResourceExtractor.Enums.ExtensionType;
+using Theme = WinUIResourceExtractor.Enums.ThemeMode;
 
 namespace WinUIResourceExtractor
 {
@@ -28,12 +31,75 @@ namespace WinUIResourceExtractor
             }
 
             MarkUsedResources();
+            SaveDefinedResources();
+            SaveUsedResources();
 
-            Console.WriteLine($"Total Defined Theme Resources : {allDefinedThemeResources[(int)ThemeMode.Light].Count}");
-            Console.WriteLine($"Total Defined Static Resources : {allDefinedStaticResources.Count}");
-            Console.WriteLine($"Total Number of Styles : {styleResourcesDict.Count}");
             Console.WriteLine($"Total Number of Files : {fc}");
+            Console.WriteLine($"Total Number of Styles : {styleResourcesDict.Count}");
+        }
 
+        private static void SaveUsedResources()
+        {
+            string directory = Directory.GetCurrentDirectory();
+
+            string usedStaticResourceFile = Path.Combine(directory, "WinUI.SR.Used.xaml");
+            string notUsedStaticResourceFile = Path.Combine(directory, "WinUI.SR.Not.xaml");
+            XmlDocument usedDoc = new XmlDocument();
+            XmlDocument otherDoc = new XmlDocument();
+            usedDoc.LoadXml(s_rootElement);
+            otherDoc.LoadXml(s_rootElement);
+            
+            for(int i=0;i<allDefinedStaticResourceKeys.Count;i++)
+            {
+                if (allUsedStaticResources[i])
+                {
+                    XmlNode node = usedDoc.CreateNode(XmlNodeType.Element, "Key", null);
+                    node.AppendChild(usedDoc.CreateTextNode(allDefinedStaticResourceKeys[i]));
+                    usedDoc.DocumentElement?.AppendChild(node);
+                }
+                else
+                {
+                    XmlNode node = otherDoc.CreateNode(XmlNodeType.Element, "Key", null);
+                    node.AppendChild(otherDoc.CreateTextNode(allDefinedStaticResourceKeys[i]));
+                    otherDoc.DocumentElement?.AppendChild(node);
+                }
+            }
+
+            usedDoc.Save(usedStaticResourceFile);
+            otherDoc.Save(notUsedStaticResourceFile);
+        }
+
+        private static void SaveDefinedResources()
+        {
+            string directory = Directory.GetCurrentDirectory();
+
+            string stylesDumpFile = Path.Combine(directory, "WinUI.Styles.xaml");
+            XmlDocument styleDocument = new XmlDocument();
+            styleDocument.LoadXml(s_rootElement);
+
+            foreach (XmlNodeList nodes in stylesDict.Values)
+            {
+                foreach(XmlNode node in nodes)
+                {
+                    XmlNode inode = styleDocument.ImportNode(node, true);
+                    styleDocument.DocumentElement?.AppendChild(inode);
+                }
+            }
+
+            styleDocument.Save(stylesDumpFile);
+
+
+            string staticResourceDumpFile = Path.Combine(directory, "WinUI.StaticResource.xaml");
+            XmlDocument staticResourceDocument = new XmlDocument();
+            staticResourceDocument.LoadXml(s_rootElement);
+
+            foreach(XmlNode node in allDefinedStaticResources)
+            {
+                XmlNode inode = staticResourceDocument.ImportNode(node, true);
+                staticResourceDocument.DocumentElement?.AppendChild(inode);
+            }
+
+            staticResourceDocument.Save(staticResourceDumpFile);
         }
 
         private static void MarkUsedResources()
@@ -52,9 +118,9 @@ namespace WinUIResourceExtractor
             totalUsedThemeResources.Add(0);
             totalUsedThemeResources.Add(0);
 
-            foreach(ThemeMode mode in Enum.GetValues(typeof(ThemeMode)))
+            foreach (Theme mode in Enum.GetValues(typeof(Theme)))
             {
-                if(mode == ThemeMode.Null) continue;
+                if (mode == Theme.Null) continue;
 
                 for (int i = 0; i < usedThemeResources[(int)mode].Count; i++)
                 {
@@ -63,11 +129,14 @@ namespace WinUIResourceExtractor
                 }
             }
 
-            Console.WriteLine($"Total Used Static Resources : {totalUsedStaticResources}");
+            allUsedStaticResources = usedStaticResources;
+            allUsedThemeResources = usedThemeResources;
+
+            Console.WriteLine($"Total Used Static Resources : {allDefinedStaticResourceKeys.Count} {totalUsedStaticResources}");
             Console.WriteLine($"Total Used Theme Resources :");
-            Console.WriteLine($"\n Light : {totalUsedThemeResources[(int)ThemeMode.Light]}");
-            Console.WriteLine($"\n Dark : {totalUsedThemeResources[(int)ThemeMode.Dark]}");
-            Console.WriteLine($"\n HighContrast : {totalUsedThemeResources[(int)ThemeMode.HighContrast]}");
+            Console.WriteLine($"\t Light : {allDefinedThemeResourceKeys[(int)Theme.Light].Count} {totalUsedThemeResources[(int)Theme.Light]}");
+            Console.WriteLine($"\t Dark : {allDefinedThemeResourceKeys[(int)Theme.Dark].Count} {totalUsedThemeResources[(int)Theme.Dark]}");
+            Console.WriteLine($"\t HighContrast : {allDefinedThemeResourceKeys[(int)Theme.HighContrast].Count} {totalUsedThemeResources[(int)Theme.HighContrast]}");
         }
 
         private static void RecursiveMarkUsedThemeResources(ref List<List<bool>> usedThemeResources)
@@ -143,27 +212,35 @@ namespace WinUIResourceExtractor
 
             if(node.Name.Contains("StaticResource"))
             {
-                foreach(XmlAttribute attr in node.SelectNodes("//@*"))
+                XmlAttributeCollection? attrs = node.Attributes;
+                if(attrs is not null)
                 {
-                    if(attr.Name.Contains("ResourceKey"))
+                    foreach(XmlAttribute attr in attrs)
                     {
-                        usedResources.Add(attr.Value);
+                        if(attr.Name.Contains("ResourceKey"))
+                        {
+                            usedResources.Add(attr.Value);
+                        }
                     }
                 }
             }
             else
             {
-                foreach(XmlAttribute attr in node.SelectNodes("//@*"))
+                XmlAttributeCollection? attrs = node.Attributes;
+                if(attrs is not null)
                 {
-                    ExtensionType ext = GetValueExtensionType(attr.Value);
-                    if (ext is ExtensionType.Null)
-                        continue;
-
-                    if(ext is not ExtensionType.TemplateBinding)
+                    foreach(XmlAttribute attr in attrs)
                     {
-                        string val = attr.Value.Substring(attr.Value.IndexOf(' ') + 1);
-                        val = val.Substring(0, val.Length - 1);
-                        usedResources.Add(val);
+                        ExtType ext = GetValueExtType(attr.Value);
+                        if (ext is ExtType.Null)
+                            continue;
+
+                        if(ext is not ExtType.TemplateBinding)
+                        {
+                            string val = attr.Value.Substring(attr.Value.IndexOf(' ') + 1);
+                            val = val.Substring(0, val.Length - 1);
+                            usedResources.Add(val);
+                        }
                     }
                 }
             }
@@ -179,14 +256,34 @@ namespace WinUIResourceExtractor
             // Marking all static resources used
             foreach (XmlNode style in styleResourcesDict.Keys)
             {
-                List<string> styleStaticResources = styleResourcesDict[style][(int)ExtensionType.StaticResource];
+                List<string> styleStaticResources = styleResourcesDict[style][(int)ExtType.StaticResource];
+                List<string> styleThemeResources = styleResourcesDict[style][(int)ExtType.ThemeResource];
+
                 if (styleStaticResources is not null)
                 {
                     foreach (string staticResource in styleStaticResources)
                     {
                         for (int i = 0; i < allDefinedStaticResources.Count; i++)
                         {
-                            if (string.Equals(GetKeyName(allDefinedStaticResources[i]), staticResource, StringComparison.OrdinalIgnoreCase))
+                            if (string.Equals(allDefinedStaticResourceKeys[i], staticResource, StringComparison.OrdinalIgnoreCase))
+                            {
+                                if (usedStaticResources[i] == false)
+                                {
+                                    usedStaticResources[i] = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (styleThemeResources is not null)
+                {
+                    foreach (string staticResource in styleThemeResources)
+                    {
+                        for (int i = 0; i < allDefinedStaticResources.Count; i++)
+                        {
+                            if (string.Equals(allDefinedStaticResourceKeys[i], staticResource, StringComparison.OrdinalIgnoreCase))
                             {
                                 if (usedStaticResources[i] == false)
                                 {
@@ -216,12 +313,12 @@ namespace WinUIResourceExtractor
             // Marking first level of theme resources used
             foreach (XmlNode style in styleResourcesDict.Keys)
             {
-                foreach (ThemeMode mode in Enum.GetValues(typeof(ThemeMode)))
+                foreach (Theme mode in Enum.GetValues(typeof(Theme)))
                 {
-                    if (mode == ThemeMode.Null)
+                    if (mode == Theme.Null)
                         continue;
 
-                    List<string> styleThemeResources = styleResourcesDict[style][(int)ExtensionType.ThemeResource];
+                    List<string> styleThemeResources = styleResourcesDict[style][(int)ExtType.ThemeResource];
                     if (styleThemeResources is not null)
                     {
                         foreach (string themeResource in styleThemeResources)
@@ -248,7 +345,11 @@ namespace WinUIResourceExtractor
 
         private static string GetKeyName(XmlNode node)
         {
-            foreach(XmlAttribute attr in node.SelectNodes("//@*"))
+            XmlAttributeCollection? attrs = node.Attributes;
+            if (attrs is null)
+                return "";
+
+            foreach(XmlAttribute attr in attrs)
             {
                 if(attr.Name.Contains("Key"))
                 {
@@ -262,25 +363,34 @@ namespace WinUIResourceExtractor
         private static void CombineDefinedResources(string file)
         {
             // Combining StaticResource's
-            allDefinedStaticResources.AddRange(definedStaticResourcesDict[file]);
+            foreach(XmlNode node in definedStaticResourcesDict[file])
+            {
+                allDefinedStaticResourceKeys.Add(GetKeyName(node));
+                allDefinedStaticResources.Add(node);
+            }
 
             if(allDefinedThemeResources.Count < 3)
             {
                 allDefinedThemeResources.Add(new List<XmlNode>());
                 allDefinedThemeResources.Add(new List<XmlNode>());
                 allDefinedThemeResources.Add(new List<XmlNode>());
+                allDefinedThemeResourceKeys.Add(new List<string>());
+                allDefinedThemeResourceKeys.Add(new List<string>());
+                allDefinedThemeResourceKeys.Add(new List<string>());
             }
         
             // Combining ThemeResource's
-            foreach(ThemeMode mode in Enum.GetValues(typeof(ThemeMode)))
+            
+            foreach(Theme mode in Enum.GetValues(typeof(Theme)))
             {
-                if (mode == ThemeMode.Null)
+                if (mode == Theme.Null)
                     continue;
 
                 if (definedThemeResourcesDict[file] is not null)
                 {
                     foreach(XmlNode node in definedThemeResourcesDict[file][(int)mode])
                     {
+                        allDefinedThemeResourceKeys[(int)mode].Add(GetKeyName(node));
                         allDefinedThemeResources[(int)mode].Add(node);
                     }
                 }
@@ -338,50 +448,6 @@ namespace WinUIResourceExtractor
                 }
             }
 
-            #region Not Needed Code
-
-            //XmlNodeList themeDictionaries = doc.GetElementsByTagName("ResourceDictionary.ThemeDictionaries");
-            //if(themeDictionaries.Count != 0)
-            //{
-            //    if (themeDictionaries.Count > 1)
-            //        throw new InvalidDataException("Assumed that there should be only one main ThemeDictionaries per file");
-
-
-
-            //    // All the nodes have the same number of resources defined so we will not worry about every variation here
-            //    XmlNode? defaultThemeDictionary = themeDictionaries[0];
-            //    if(defaultThemeDictionary is not null)
-            //    {
-            //        XmlNodeList? keyNodes = defaultThemeDictionary.SelectNodes("//@x:Key", mgr);
-            //        if(keyNodes is not null)
-            //        {
-            //            foreach(XmlAttribute key in keyNodes)
-            //            {
-            //                definedThemeResources.Add(key.Value);
-            //            }
-            //        }
-            //    }
-            //}
-
-            // Extract StaticResources from the files
-
-            //foreach(XmlNode child in root.ChildNodes)
-            //{
-            //    if (child.Name.Contains("Style") || child.Name.Contains("ResourceDictionary.ThemeDictionaries"))
-            //        continue;
-
-            //    XmlNodeList keyAttributes = child.SelectNodes("//@x:Key", mgr);
-            //    if(keyAttributes is not null)
-            //    {
-            //        foreach (XmlAttribute attr in keyAttributes)
-            //        {
-            //            definedStaticResources.Add(attr.Value);
-            //        }
-            //    }
-            //}
-
-            #endregion
-
             stylesDict[xamlFile] = styles;
             definedStaticResourcesDict[xamlFile] = definedStaticResources;
             definedThemeResourcesDict[xamlFile] = definedThemeResources;
@@ -396,8 +462,8 @@ namespace WinUIResourceExtractor
 
             foreach (XmlNode child in themeDictionary)
             {
-                ThemeMode mode = GetThemeMode(child);
-                if (mode == ThemeMode.Null) 
+                Theme mode = GetTheme(child);
+                if (mode == Theme.Null) 
                     continue;
                 themeResources[(int)mode] = child.ChildNodes;
             }
@@ -405,7 +471,7 @@ namespace WinUIResourceExtractor
             return themeResources;
         }
 
-        private static ThemeMode GetThemeMode(XmlNode node)
+        private static Theme GetTheme(XmlNode node)
         {
             foreach(XmlAttribute attr in node.Attributes)
             {
@@ -414,44 +480,45 @@ namespace WinUIResourceExtractor
                     switch(attr.Value)
                     {
                         case "Default":
-                            return ThemeMode.Dark;
+                            return Theme.Dark;
                         case "Light":
-                            return ThemeMode.Light;
+                            return Theme.Light;
                         case "HighContrast":
-                            return ThemeMode.HighContrast;
+                            return Theme.HighContrast;
                     }
                 }
             }
 
-            return ThemeMode.Null;
+            return Theme.Null;
         }
 
-        private static ExtensionType GetValueExtensionType(ReadOnlySpan<char> value)
+        private static ExtType GetValueExtType(ReadOnlySpan<char> value)
         {
+
             if (value.Length == 0)
-                return ExtensionType.Null;
+                return ExtType.Null;
 
             if (value.StartsWith("{"))
             {
 
                 if(value.StartsWith("{ThemeResource", StringComparison.OrdinalIgnoreCase))
                 {
-                    return ExtensionType.ThemeResource;
+                    return ExtType.ThemeResource;
                 }
 
                 if(value.StartsWith("{StaticResource", StringComparison.OrdinalIgnoreCase))
                 {
-                    return ExtensionType.StaticResource;
+                    return ExtType.StaticResource;
                 }
 
                 if(value.Contains("TemplateBinding", StringComparison.OrdinalIgnoreCase))
                 {
-                    return ExtensionType.TemplateBinding;
+                    return ExtType.TemplateBinding;
                 }
 
             }
 
-            return ExtensionType.Null;
+            return ExtType.Null;
         }
 
         private static List<List<string>>? ExtractUsedResourcesFromStyles(XmlNode style)
@@ -465,13 +532,17 @@ namespace WinUIResourceExtractor
             XmlNodeList? attributes = style.SelectNodes("//@*");
 
             if (attributes is null)
+            {
                 return null;
+            }
 
             foreach (XmlAttribute attr in attributes)
             {
-                ExtensionType ext = GetValueExtensionType(attr.Value);
-                if(ext is ExtensionType.Null) 
+                ExtType ext = GetValueExtType(attr.Value);
+                if(ext is ExtType.Null)
+                {
                     continue;
+                }
 
                 string val = attr.Value.Substring(attr.Value.IndexOf(' ') + 1);
                 val = val.Substring(0, val.Length - 1);
@@ -506,32 +577,22 @@ namespace WinUIResourceExtractor
         static List<List<XmlNode>> allDefinedThemeResources = new(3);
         static List<XmlNode> allDefinedStaticResources = new();
 
+        static List<List<string>> allDefinedThemeResourceKeys = new(3);
+        static List<string> allDefinedStaticResourceKeys = new();
+        static List<List<bool>> allUsedThemeResources = new(3);
+        static List<bool> allUsedStaticResources = new();
+
         static XmlNamespaceManager s_manager;
 
         #endregion
 
-        static string s_ControlsPath = "E:\\repos\\microsoft-ui-xaml-lift\\controls\\dev\\";
+        static string s_ControlsPath = "C:\\work\\repos\\microsoft-ui-xaml-lift\\controls\\dev\\";
+
+        const string s_rootElement = "<ResourceDictionary xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"></ResourceDictionary>";
 
         #region Private Structs
 
-        enum ThemeMode
-        {
-            Light = 0,
 
-            Dark = 1,
-
-            HighContrast = 2,
-
-            Null = 3
-        }
-
-        enum ExtensionType
-        {
-            ThemeResource = 0,
-            StaticResource = 1,
-            TemplateBinding = 2,
-            Null = 3
-        }
 
         #endregion
     }
