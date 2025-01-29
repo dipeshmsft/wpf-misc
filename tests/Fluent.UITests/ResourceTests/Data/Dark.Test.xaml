@@ -111,6 +111,7 @@
     <Color x:Key="SystemFillColorNeutralBackground">#08FFFFFF</Color>
     <Color x:Key="SystemFillColorSolidAttentionBackground">#2E2E2E</Color>
     <Color x:Key="SystemFillColorSolidNeutralBackground">#2E2E2E</Color>
+    <Color x:Key="SystemControlTransparent">Transparent</Color>
 
     <!-- AccentColor Brushes -->
 

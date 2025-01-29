@@ -1,0 +1,430 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:ut="clr-namespace:Fluent.UITests.TestUtilities">
+    <ResourceDictionary.MergedDictionaries>
+        <ut:TestDictionary Name="Light">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Light.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="{StaticResource ControlFillColorTransparent}" />
+                    <Thickness x:Key="RadioButton_Padding">8,6,0,0</Thickness>
+                    <CornerRadius x:Key="RadioButton_CornerRadius">4,4,4,4</CornerRadius>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">120</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">0</Thickness>
+                    <!--<FontFamily></FontFamily>-->
+                    <FontWeight x:Key="RadioButton_FontWeight">Normal</FontWeight>
+
+                    <!--Root border properties-->
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="{StaticResource ControlFillColorTransparent}" />
+                    <Thickness x:Key="RootBorder_BorderThickness">0</Thickness>
+                    <CornerRadius x:Key="RootBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ContentPresenter Properties-->
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,6,0,0</Thickness>
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource ControlAltFillColorSecondary}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource ControlStrongStrokeColorDefault}" />
+                    <sys:Double x:Key="OuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Width">20</sys:Double>
+
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource SystemAccentColorDark1}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource SystemAccentColorDark1}" />
+                    <sys:Double x:Key="CheckOuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Width">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">0</sys:Double>
+
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <sys:Double x:Key="CheckGlyph_Height">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Width">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">0</sys:Double>
+
+                    <!--PressedCheckGlyph properties-->
+                    <SolidColorBrush x:Key="PressedCheckGlyph_Background" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="PressedCheckGlyph_BorderBrush" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <CornerRadius x:Key="PressedCheckGlyph_CornerRadius">6</CornerRadius>
+                    <sys:Double x:Key="PressedCheckGlyph_Height">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Width">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Opacity">0</sys:Double>
+
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource ControlAltFillColorDisabled}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource ControlStrongStrokeColorDisabled}" />
+                    <!--not defined in wpf-->
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource AccentFillColorDisabled}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource AccentFillColorDisabled}" />
+                    <!--not defined in wpf-->
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <!--<sys:Double x:Key="CheckGlyph_Height">14</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Width">14</sys:Double>-->
+                    <!--ContentPresenter Properties-->
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="Checked">
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CheckedCustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomRadioButton">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomRadioButtonChecked">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="Dark">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Dark.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="{StaticResource ControlFillColorTransparent}" />
+                    <Thickness x:Key="RadioButton_Padding">8,6,0,0</Thickness>
+                    <CornerRadius x:Key="RadioButton_CornerRadius">4,4,4,4</CornerRadius>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">120</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">0</Thickness>
+                    <FontWeight x:Key="RadioButton_FontWeight">Normal</FontWeight>
+
+                    <Thickness x:Key="RootBorder_BorderThickness">0</Thickness>
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="{StaticResource ControlFillColorTransparent}" />
+                    <CornerRadius x:Key="RootBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ContentPresenter Properties-->
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,6,0,0</Thickness>
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource ControlAltFillColorSecondary}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource ControlStrongStrokeColorDefault}" />
+                    <sys:Double x:Key="OuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Width">20</sys:Double>
+
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource SystemAccentColorLight2}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource SystemAccentColorLight2}" />
+                    <sys:Double x:Key="CheckOuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Width">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">0</sys:Double>
+
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <sys:Double x:Key="CheckGlyph_Height">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Width">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">0</sys:Double>
+
+                    <!--PressedCheckGlyph properties-->
+                    <SolidColorBrush x:Key="PressedCheckGlyph_Background" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="PressedCheckGlyph_BorderBrush" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <CornerRadius x:Key="PressedCheckGlyph_CornerRadius">6</CornerRadius>
+                    <sys:Double x:Key="PressedCheckGlyph_Height">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Width">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Opacity">0</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource ControlAltFillColorDisabled}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource ControlStrongStrokeColorDisabled}" />
+                    <!--not defined in wpf-->
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource AccentFillColorDisabled}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource AccentFillColorDisabled}" />
+                    <!--not defined in wpf-->
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <!--<sys:Double x:Key="CheckGlyph_Height">14</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Width">14</sys:Double>-->
+                    <!--ContentPresenter Properties-->
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Checked">
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CheckedCustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomRadioButton">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomRadioButtonChecked">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="HC">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="{StaticResource SystemControlTransparent}" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="{StaticResource SystemControlTransparent}" />
+                    <Thickness x:Key="RadioButton_Padding">8,6,0,0</Thickness>
+                    <CornerRadius x:Key="RadioButton_CornerRadius">4,4,4,4</CornerRadius>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Top</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">120</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">0</Thickness>
+                    <FontWeight x:Key="RadioButton_FontWeight">Normal</FontWeight>
+
+                    <!--Root border properties-->
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="{StaticResource SystemControlTransparent}" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="{StaticResource SystemControlTransparent}" />
+                    <Thickness x:Key="RootBorder_BorderThickness">0</Thickness>
+                    <CornerRadius x:Key="RootBorder_CornerRadius">4,4,4,4</CornerRadius>
+
+                    <!--ContentPresenter Properties-->
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Left</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Top</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8,6,0,0</Thickness>
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource SystemColorButtonTextColor}" />
+
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource SystemColorButtonFaceColor}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <sys:Double x:Key="OuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="OuterEllipse_Width">20</sys:Double>
+
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource SystemColorHighlightTextColor}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource SystemColorHighlightColor}" />
+                    <sys:Double x:Key="CheckOuterEllipse_StrokeThickness">1</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Height">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Width">20</sys:Double>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">0</sys:Double>
+
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <sys:Double x:Key="CheckGlyph_Height">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Width">12</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">0</sys:Double>
+
+                    <!--PressedCheckGlyph properties-->
+                    <SolidColorBrush x:Key="PressedCheckGlyph_Background" Color="{StaticResource SystemColorHighlightColor}" />
+                    <!--<SolidColorBrush x:Key="PressedCheckGlyph_BorderBrush" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <CornerRadius x:Key="PressedCheckGlyph_CornerRadius">6</CornerRadius>
+                    <sys:Double x:Key="PressedCheckGlyph_Height">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Width">4</sys:Double>
+                    <sys:Double x:Key="PressedCheckGlyph_Opacity">0</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <!--Root border properties-->
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="{StaticResource SystemControlTransparent}" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="{StaticResource SystemControlTransparent}" />
+                    <!--Outer ellipse properties-->
+                    <SolidColorBrush x:Key="OuterEllipse_Fill" Color="{StaticResource SystemColorWindowColor}" />
+                    <SolidColorBrush x:Key="OuterEllipse_Stroke" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <!--not defined in wpf-->
+                    <!--CheckOuterEllipse properties-->
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Fill" Color="{StaticResource SystemColorWindowColor}" />
+                    <SolidColorBrush x:Key="CheckOuterEllipse_Stroke" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <!--CheckGlyph properties-->
+                    <SolidColorBrush x:Key="CheckGlyph_Fill" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <!--<SolidColorBrush x:Key="CheckGlyph_Stroke" Color="{StaticResource SystemAccentColorDark1}" />-->
+                    <!--<sys:Double x:Key="CheckGlyph_Height">14</sys:Double>
+                 <sys:Double x:Key="CheckGlyph_Width">14</sys:Double>-->
+                    <!--ContentPresenter Properties-->
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="{StaticResource SystemColorGrayTextColor}" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="Checked">
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CheckedCustomizedBrush">
+                    <SolidColorBrush x:Key="RadioButton_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RadioButton_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="RadioButton_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="RootBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="RootBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ContentPresenter_Foreground" Color="Maroon" />
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CustomRadioButton">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CustomRadioButtonChecked">
+                    <FontWeight x:Key="RadioButton_FontWeight">Bold</FontWeight>
+                    <Thickness x:Key="RadioButton_Padding">8, 5, 10, 10</Thickness>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="RadioButton_HorizontalContentAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="RadioButton_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <sys:Double x:Key="RadioButton_MinWidth">90</sys:Double>
+                    <Thickness x:Key="RadioButton_BorderThickness">4</Thickness>
+                    <Thickness x:Key="RootBorder_BorderThickness">4</Thickness>
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">8, 5, 10, 10</Thickness>
+                    <sys:Double x:Key="CheckOuterEllipse_Opacity">1</sys:Double>
+                    <sys:Double x:Key="CheckGlyph_Opacity">1</sys:Double>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
