@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinUIResourceExtractor
 {
-    internal class Enums
+    public static class Enums
     {
         public enum ThemeMode
         {

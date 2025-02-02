@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\work\repos\wpf-misc\apps\winui-xaml-extract\WinUIResourceExtractor\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\work\repos\wpf-misc\apps\winui-xaml-extract\WinUIResourceExtractor\.editorconfig" />
+  </ItemGroup>
+
 </Project>
