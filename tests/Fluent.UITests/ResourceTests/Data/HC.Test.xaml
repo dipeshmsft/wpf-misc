@@ -103,6 +103,7 @@
     <Color x:Key="SystemFillColorNeutralBackground">#2D3236</Color>
     <Color x:Key="SystemFillColorSolidAttentionBackground">#2D3236</Color>
     <Color x:Key="SystemFillColorSolidNeutralBackground">#FF0000</Color>
+    <Color x:Key="SystemControlTransparent">Transparent</Color>
 
     <DynamicResource x:Key="SystemColorWindowTextColor" ResourceKey="{x:Static SystemColors.WindowTextColorKey}" />
     <DynamicResource x:Key="SystemColorWindowColor" ResourceKey="{x:Static SystemColors.WindowColorKey}" />

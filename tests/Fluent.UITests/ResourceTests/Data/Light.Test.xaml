@@ -84,6 +84,7 @@
 
     <!--  Fallback color for missing Acrylic used for e.g. Flyouts  -->
     <Color x:Key="AcrylicBackgroundFillColorDefault">#F9F9F9</Color>
+    <Color x:Key="AcrylicInAppFillColorDefault">#F9F9F9</Color>
 
     <Color x:Key="LayerOnMicaBaseAltFillColorDefault">#B3FFFFFF</Color>
     <Color x:Key="LayerOnMicaBaseAltFillColorSecondary">#0A000000</Color>
@@ -109,6 +110,7 @@
     <Color x:Key="SystemFillColorNeutralBackground">#06000000</Color>
     <Color x:Key="SystemFillColorSolidAttentionBackground">#F7F7F7</Color>
     <Color x:Key="SystemFillColorSolidNeutralBackground">#F3F3F3</Color>
+    <Color x:Key="SystemControlTransparent">Transparent</Color>
 
     <DynamicResource x:Key="SystemAccentColor" ResourceKey="{x:Static SystemColors.AccentColorKey}" />
     <DynamicResource x:Key="SystemAccentColorLight1" ResourceKey="{x:Static SystemColors.AccentColorLight1Key}" />
