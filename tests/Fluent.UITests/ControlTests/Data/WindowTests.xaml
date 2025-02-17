@@ -1,0 +1,81 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:ut="clr-namespace:Fluent.UITests.TestUtilities">
+    <ResourceDictionary.MergedDictionaries>
+
+        <ut:TestDictionary Name="Light">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Light.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Window Control Properties -->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
+                    <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
+                    <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
+                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>                 
+                    
+                    <!-- Window ResizeGrip Properties -->
+                    <HorizontalAlignment x:Key="WindowResizeGrip_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="WindowResizeGrip_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Collapsed</Visibility>
+                    <sys:Boolean x:Key="WindowResizeGrip_IsTabStop">False</sys:Boolean>
+                </ut:TestDictionary>
+                
+                <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                    
+                </ut:TestDictionary>
+                
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+
+        <ut:TestDictionary Name="Dark">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Dark.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Window Control Properties -->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
+                    <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
+                    <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
+                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>
+
+                    <!-- Window ResizeGrip Properties -->
+                    <HorizontalAlignment x:Key="WindowResizeGrip_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="WindowResizeGrip_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Collapsed</Visibility>
+                    <sys:Boolean x:Key="WindowResizeGrip_IsTabStop">False</sys:Boolean>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                  
+                </ut:TestDictionary>
+              
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+
+        <ut:TestDictionary Name="HC">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
+                <ut:TestDictionary Name="Default">
+                    <!-- Window Control Properties -->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
+                    <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
+                    <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
+                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource SystemColorWindowTextColor}"/>
+
+                    <!-- Window ResizeGrip Properties -->
+                    <HorizontalAlignment x:Key="WindowResizeGrip_HorizontalAlignment">Right</HorizontalAlignment>
+                    <VerticalAlignment x:Key="WindowResizeGrip_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Collapsed</Visibility>
+                    <sys:Boolean x:Key="WindowResizeGrip_IsTabStop">False</sys:Boolean>
+                </ut:TestDictionary>
+
+                <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                   
+                </ut:TestDictionary>              
+
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
