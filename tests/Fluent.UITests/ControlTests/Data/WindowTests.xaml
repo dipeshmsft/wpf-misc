@@ -10,8 +10,7 @@
 
                 <ut:TestDictionary Name="Default">
                     <!-- Window Control Properties -->
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />
-                    <!-- not defined in wpf code-->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
                     <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
                     <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
                     <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>                 
@@ -24,14 +23,9 @@
                 </ut:TestDictionary>
                 
                 <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
-                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
-                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                    
                 </ut:TestDictionary>
-
-                <ut:TestDictionary Name="Disabled">
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent"/>                   
-                </ut:TestDictionary>
+                
             </ut:TestDictionary.MergedDictionaries>
         </ut:TestDictionary>
 
@@ -41,10 +35,9 @@
 
                 <ut:TestDictionary Name="Default">
                     <!-- Window Control Properties -->
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />
-                    <!-- not defined in wpf code-->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
                     <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
-     <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
+                    <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
                     <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>
 
                     <!-- Window ResizeGrip Properties -->
@@ -55,14 +48,9 @@
                 </ut:TestDictionary>
 
                 <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
-                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />
-                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource TextFillColorPrimary}"/>
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                  
                 </ut:TestDictionary>
-
-                <ut:TestDictionary Name="Disabled">
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent"/>
-                </ut:TestDictionary>
+              
             </ut:TestDictionary.MergedDictionaries>
         </ut:TestDictionary>
 
@@ -71,8 +59,7 @@
                 <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
                 <ut:TestDictionary Name="Default">
                     <!-- Window Control Properties -->
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />
-                    <!-- not defined in wpf code-->
+                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />                   
                     <!--<SolidColorBrush x:Key="Window_BorderBrush" Color="{StaticResource TextFillColorPrimary}"/>
                     <Thickness x:Key="Window_BorderThickness">11,5,11,6</Thickness>-->
                     <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource SystemColorWindowTextColor}"/>
@@ -85,15 +72,8 @@
                 </ut:TestDictionary>
 
                 <ut:TestDictionary Name="CanResizeGrip_NormalWindow">
-                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent" />
-                    <SolidColorBrush x:Key="Window_Foreground" Color="{StaticResource SystemColorWindowTextColor}"/>
-                </ut:TestDictionary>
-
-                <ut:TestDictionary Name="Disabled">
-                    <SolidColorBrush x:Key="Window_Background" Color="Transparent"/>
-                </ut:TestDictionary>
-
+                    <Visibility x:Key="WindowResizeGrip_Visibility">Visible</Visibility>                   
+                </ut:TestDictionary>              
 
             </ut:TestDictionary.MergedDictionaries>
         </ut:TestDictionary>
