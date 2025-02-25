@@ -1,0 +1,391 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+ xmlns:ut="clr-namespace:Fluent.UITests.TestUtilities">
+    <ResourceDictionary.MergedDictionaries>
+        <ut:TestDictionary Name="Light">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Light.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Expander Control Properties -->
+                    <SolidColorBrush x:Key="Expander_Background" Color="{StaticResource CardBackgroundFillColorDefault}" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="Expander_BorderThickness">1</Thickness>
+                    <Thickness x:Key="Expander_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Center</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Normal</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="{StaticResource CardBackgroundFillColorDefault}" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="ToggleButtonBorder_BorderThickness">1</Thickness>
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4</CornerRadius>
+
+                    <!--Toggle Button properties-->
+                    <Thickness x:Key="ToggleButton_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="ToggleButton_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <sys:Double x:Key="ToggleButton_FontSize">12</sys:Double>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Normal</FontWeight>
+
+                    <!--toggle button grid properties-->
+                    <SolidColorBrush x:Key="ToggleButtonGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                   
+                    <!--toggle button content presenter-->
+                    <Thickness x:Key="ToggleButtonContentPresenter_Margin">0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButtonContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButtonContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+
+                    <!--ChevronGrid properties-->
+                    <VerticalAlignment x:Key="ChevronGrid_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ChevronGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+                    
+                    <!--textblock properties-->
+                    <sys:Double x:Key="Textblock_FontSize">12</sys:Double>
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <FontFamily x:Key="Textblock_FontFamily">Segoe Fluent Icons, Segoe MDL2 Assets</FontFamily>
+                    <HorizontalAlignment x:Key="Textblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <sys:String x:Key="Textblock_Text">&#xE70D;</sys:String>
+
+                    <!--content presenter border-->
+                    <SolidColorBrush x:Key="ContentPresenterBorder_Background" Color="{StaticResource CardBackgroundFillColorSecondary}" />
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Collapsed</Visibility>
+                    
+                    <!-- ContentPresenter Properties -->
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">0</Thickness>
+                    
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandDown">
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandUp">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,0,4,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,1,0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,4,0,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandLeft">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,0,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandRight">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="CustomBrush">
+                    <SolidColorBrush x:Key="Expander_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="Green" />
+
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="Maroon" />
+                    <!--<SolidColorBrush x:Key="ToggleButton_BorderBrush" Color="Green" />-->
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="Maroon" />
+
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="Green" />
+                    
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Custom">
+                    <Thickness x:Key="Expander_BorderThickness">10</Thickness>
+                    <Thickness x:Key="Expander_Padding">12,0,12,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Bold</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                     <Thickness x:Key="ToggleButtonBorder_BorderThickness">10</Thickness>
+
+                    <Thickness x:Key="ToggleButton_Padding">12,0,12,0</Thickness>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Bold</FontWeight>
+
+                    <!--<Thickness x:Key="ContentPresenterBorder_BorderThickness">10</Thickness>-->
+
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">12,0,12,0</Thickness>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="Dark">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/Dark.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Expander Control Properties -->
+                    <SolidColorBrush x:Key="Expander_Background" Color="{StaticResource CardBackgroundFillColorDefault}" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="Expander_BorderThickness">1</Thickness>
+                    <Thickness x:Key="Expander_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Center</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Normal</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="{StaticResource CardBackgroundFillColorDefault}" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="ToggleButtonBorder_BorderThickness">1</Thickness>
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4</CornerRadius>
+
+                    <!--Toggle Button properties-->
+                    <Thickness x:Key="ToggleButton_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <sys:Double x:Key="ToggleButton_FontSize">12</sys:Double>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Normal</FontWeight>
+                    
+                    <!--toggle button grid properties-->
+                    <SolidColorBrush x:Key="ToggleButtonGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+
+                    <!--toggle button content presenter-->
+                    <Thickness x:Key="ToggleButtonContentPresenter_Margin">0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButtonContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButtonContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+                    <sys:Double x:Key="ToggleButtonContentPresenter_FontSize">12</sys:Double>
+
+                    <!--ChevronGrid properties-->
+                    <VerticalAlignment x:Key="ChevronGrid_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ChevronGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+
+                    <!--textblock properties-->
+                    <sys:Double x:Key="Textblock_FontSize">12</sys:Double>
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource TextFillColorPrimary}" />
+                    <FontFamily x:Key="Textblock_FontFamily">Segoe Fluent Icons, Segoe MDL2 Assets</FontFamily>
+                    <HorizontalAlignment x:Key="Textblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <sys:String x:Key="Textblock_Text">&#xE70D;</sys:String>
+
+                    <!--content presenter border-->
+                    <SolidColorBrush x:Key="ContentPresenterBorder_Background" Color="{StaticResource CardBackgroundFillColorSecondary}" />
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="{StaticResource CardStrokeColorDefault}" />
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Collapsed</Visibility>
+                    <!-- ContentPresenter Properties -->
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">0</Thickness>
+                    
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandDown">
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandUp">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,0,4,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,1,0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,4,0,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandLeft">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,0,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandRight">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource TextFillColorDisabled}" />
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="CustomBrush">
+                    <SolidColorBrush x:Key="Expander_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="Green" />
+                    
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="Maroon" />
+                    <!--<SolidColorBrush x:Key="ToggleButton_BorderBrush" Color="Green" />-->
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="Maroon" />
+
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="Green" />
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Custom">
+                    <Thickness x:Key="Expander_BorderThickness">10</Thickness>
+                    <Thickness x:Key="Expander_Padding">12,0,12,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Bold</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                    <Thickness x:Key="ToggleButtonBorder_BorderThickness">10</Thickness>
+
+                    <Thickness x:Key="ToggleButton_Padding">12,0,12,0</Thickness>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Bold</FontWeight>
+
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">10</Thickness>
+
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">12,0,12,0</Thickness>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+        <ut:TestDictionary Name="HC">
+            <ut:TestDictionary.MergedDictionaries>
+                <ut:TestDictionary Source="/Fluent.UITests;component/ResourceTests/Data/HC.Test.xaml" />
+
+                <ut:TestDictionary Name="Default">
+                    <!-- Expander Control Properties -->
+                    <SolidColorBrush x:Key="Expander_Background" Color="{StaticResource SystemColorButtonFaceColor}" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <Thickness x:Key="Expander_BorderThickness">1</Thickness>
+                    <Thickness x:Key="Expander_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Center</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Normal</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="{StaticResource SystemColorButtonFaceColor}" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <Thickness x:Key="ToggleButtonBorder_BorderThickness">1</Thickness>
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4</CornerRadius>
+
+                    <!--Toggle Button properties-->
+                    <Thickness x:Key="ToggleButton_Padding">16,0,0,0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalContentAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalContentAlignment">Center</VerticalAlignment>
+                    <HorizontalAlignment x:Key="ToggleButton_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <sys:Double x:Key="ToggleButton_FontSize">12</sys:Double>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Normal</FontWeight>
+
+                    <!--toggle button grid properties-->
+                    <SolidColorBrush x:Key="ToggleButtonGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+
+                    <!--toggle button content presenter-->
+                    <Thickness x:Key="ToggleButtonContentPresenter_Margin">0</Thickness>
+                    <HorizontalAlignment x:Key="ToggleButtonContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ToggleButtonContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+                    <sys:Double x:Key="ToggleButtonContentPresenter_FontSize">12</sys:Double>
+
+                    <!--ChevronGrid properties-->
+                    <VerticalAlignment x:Key="ChevronGrid_VerticalAlignment">Center</VerticalAlignment>
+                    <SolidColorBrush x:Key="ChevronGrid_Background" Color="{StaticResource ControlFillColorTransparent}" />
+
+                    <!--textblock properties-->
+                    <sys:Double x:Key="Textblock_FontSize">12</sys:Double>
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <FontFamily x:Key="Textblock_FontFamily">Segoe Fluent Icons, Segoe MDL2 Assets</FontFamily>
+                    <HorizontalAlignment x:Key="Textblock_HorizontalAlignment">Center</HorizontalAlignment>
+                    <sys:String x:Key="Textblock_Text">&#xE70D;</sys:String>
+                    
+                    <!--content presenter border-->
+                    <SolidColorBrush x:Key="ContentPresenterBorder_Background" Color="{StaticResource SystemColorWindowColor}" />
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="{StaticResource SystemColorButtonTextColor}" />
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Collapsed</Visibility>
+                    <!-- ContentPresenter Properties -->
+
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Stretch</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Center</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">0</Thickness>
+                    
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandDown">
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandUp">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,0,4,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,1,0</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,4,0,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandLeft">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">1,1,0,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="ExpandRight">
+                    <CornerRadius x:Key="ToggleButtonBorder_CornerRadius">4,0,0,4</CornerRadius>
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">0,1,1,1</Thickness>
+                    <CornerRadius x:Key="ContentPresenterBorder_CornerRadius">0,4,4,0</CornerRadius>
+                    <Visibility x:Key="ContentPresenterBorder_Visibility">Visible</Visibility>
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Disabled">
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="{StaticResource SystemColorGrayTextColor}" />
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="{StaticResource SystemColorGrayTextColor}" />           
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="CustomBrush">
+                    <SolidColorBrush x:Key="Expander_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="Expander_Foreground" Color="Maroon" />
+                    <SolidColorBrush x:Key="Expander_BorderBrush" Color="Green" />
+
+                    <SolidColorBrush x:Key="ToggleButtonBorder_Background" Color="Aqua" />
+                    <SolidColorBrush x:Key="ToggleButtonBorder_BorderBrush" Color="Green" />
+                    <SolidColorBrush x:Key="ToggleButton_Foreground" Color="Maroon" />
+                    <!--<SolidColorBrush x:Key="ToggleButton_BorderBrush" Color="Green" />-->
+                    <SolidColorBrush x:Key="Textblock_Foreground" Color="Maroon" />
+
+                    <SolidColorBrush x:Key="ContentPresenterBorder_BorderBrush" Color="Green" />
+                </ut:TestDictionary>
+                <ut:TestDictionary Name="Custom">
+                    <Thickness x:Key="Expander_BorderThickness">10</Thickness>
+                    <Thickness x:Key="Expander_Padding">12,0,12,0</Thickness>
+                    <HorizontalAlignment x:Key="Expander_HorizontalContentAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalContentAlignment">Bottom</VerticalAlignment>
+                    <HorizontalAlignment x:Key="Expander_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="Expander_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="Expander_FontWeight">Bold</FontWeight>
+
+                    <!-- Toggle button Border Properties -->
+                    <Thickness x:Key="ToggleButtonBorder_BorderThickness">10</Thickness>
+
+                    <Thickness x:Key="ToggleButton_Padding">12,0,12,0</Thickness>
+                    <VerticalAlignment x:Key="ToggleButton_VerticalAlignment">Bottom</VerticalAlignment>
+                    <FontWeight x:Key="ToggleButton_FontWeight">Bold</FontWeight>
+
+                    <Thickness x:Key="ContentPresenterBorder_BorderThickness">10</Thickness>
+
+                    <HorizontalAlignment x:Key="ContentPresenter_HorizontalAlignment">Center</HorizontalAlignment>
+                    <VerticalAlignment x:Key="ContentPresenter_VerticalAlignment">Bottom</VerticalAlignment>
+                    <Thickness x:Key="ContentPresenter_Margin">12,0,12,0</Thickness>
+                </ut:TestDictionary>
+            </ut:TestDictionary.MergedDictionaries>
+        </ut:TestDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
