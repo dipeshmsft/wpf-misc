@@ -83,8 +83,8 @@ namespace WinUIResourceExtractor
             string baseFileName = Path.GetFileNameWithoutExtension(_xamlFile);
             if(separateFiles)
             {
-                string usedDocPath = Path.Combine(outputDirectory, $"{baseFileName}.used.xaml");
-                string unusedDocPath = Path.Combine(outputDirectory, $"{baseFileName}.unused.xaml");
+                string usedDocPath = Path.Combine(outputDirectory, "used", $"{baseFileName}.used.xaml");
+                string unusedDocPath = Path.Combine(outputDirectory, "unused", $"{baseFileName}.unused.xaml");
                 
                 usedDoc.Save(usedDocPath);
                 unusedDoc.Save(unusedDocPath);

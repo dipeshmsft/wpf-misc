@@ -26,6 +26,9 @@ namespace WinUIResourceExtractor
 
             string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "outs");
             Directory.CreateDirectory(outputDirectory);
+            Directory.CreateDirectory(Path.Combine(outputDirectory, "used"));
+            Directory.CreateDirectory(Path.Combine(outputDirectory, "unused"));
+
             foreach (string file in WinUIXamlFiles)
             {
                 XamlFileObject? xamlFileObject = xamlFileTable.GetFileObject(file);
@@ -71,11 +74,8 @@ namespace WinUIResourceExtractor
                         int cnt = 0;
                         foreach(string file in s_ExcludedFiles)
                         {
-                            //Console.WriteLine(file);
                             bool removed = s_winuiXamlFiles.Remove(Path.Combine(s_RepoRoot,file));
-                            //if (removed) cnt++;
                         }
-                        //Console.WriteLine($"Removed {cnt} files");
                     }
                 }
 
