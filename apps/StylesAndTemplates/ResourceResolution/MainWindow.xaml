@@ -17,8 +17,9 @@
                 <SolidColorBrush x:Key="RedBrush" Color="Red" />
             </ResourceDictionary>
         </Grid.Resources>
+        
         <Border Width="100" Height="50"
-            BorderBrush="{DynamicResource YellowBrush}"
+            BorderBrush="{DynamicResource GreenBrush}"
             BorderThickness="2"
             CornerRadius="4" />
     </Grid>

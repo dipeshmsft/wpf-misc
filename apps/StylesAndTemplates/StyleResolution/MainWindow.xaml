@@ -18,24 +18,11 @@
         </Style>
     </Window.Resources>
     <StackPanel Orientation="Vertical">
-            <!-- Style applied implicitly -->
-            <!--<Button Content="Button 1" />-->
+        <!-- Style applied implicitly -->
+        <Button Content="Button 1" />
 
-            <!-- Style applied explicitly -->
-            <Button Content="Button 2" FontSize="14"
-                    Style="{StaticResource ButtonStyle2}" />
-        </StackPanel>
+        <!-- Style applied explicitly -->
+        <!--<Button Content="Button 2" FontSize="14"
+                    Style="{StaticResource ButtonStyle2}" />-->
+    </StackPanel>
 </Window>
-
-        <!--<Button Content="Button 3" Style="{StaticResource ButtonStyle1}" />
-        <Button Content="Button 4" />-->
-    <!--<StackPanel Orientation="Vertical">
-            <StackPanel.Resources>
-                <ResourceDictionary>
-                    <Style TargetType="Button">
-                        <Setter Property="Height" Value="40" />
-                        <Setter Property="Background" Value="Teal" />
-                    </Style>
-                </ResourceDictionary>
-            </StackPanel.Resources>
-    </StackPanel>-->
