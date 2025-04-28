@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TextBoxStyle (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TextBoxStyle (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
