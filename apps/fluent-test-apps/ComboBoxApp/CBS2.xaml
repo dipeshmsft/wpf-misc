@@ -27,7 +27,6 @@
     <system:Double x:Key="ComboBoxPopupMinHeight">32.0</system:Double>
     <system:String x:Key="ComboBoxChevronDownGlyph">&#xE70D;</system:String>
 
-
     <!--<SolidColorBrush x:Key="ComboBoxBackgroundFocused" Color="{StaticResource ControlFillColorDefault}" />-->
     <!--<SolidColorBrush x:Key="ComboBoxBorderBrushFocused" Color="{StaticResource SystemAccentColorDark1}" />-->
     
@@ -41,17 +40,41 @@
     <SolidColorBrush x:Key="ComboBoxForegroundPressed" Color="{StaticResource TextFillColorPrimary}" />
     <SolidColorBrush x:Key="ComboBoxForegroundDisabled" Color="{StaticResource TextFillColorDisabled}" />
 
-    <!--<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource ControlElevationBorderBrush}" />-->
-    <!--<SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="{StaticResource ControlElevationBorderBrush}" />-->
+    <LinearGradientBrush x:Key="ComboBoxBorderBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3">
+        <LinearGradientBrush.RelativeTransform>
+            <ScaleTransform ScaleY="-1" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0.33" Color="{StaticResource ControlStrokeColorSecondary}" />
+            <GradientStop Offset="1.0" Color="{StaticResource ControlStrokeColorDefault}" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ComboBoxBorderBrushPointerOver" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3">
+        <LinearGradientBrush.RelativeTransform>
+            <ScaleTransform ScaleY="-1" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0.33" Color="{StaticResource ControlStrokeColorSecondary}" />
+            <GradientStop Offset="1.0" Color="{StaticResource ControlStrokeColorDefault}" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
     <SolidColorBrush x:Key="ComboBoxBorderBrushPressed" Color="{StaticResource ControlStrokeColorDefault}" />
     <SolidColorBrush x:Key="ComboBoxBorderBrushDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
 
-    <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource TextFillColorPrimary}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource TextFillColorSecondary}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocused" Color="{StaticResource TextFillColorSecondary}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocusedPressed" Color="{StaticResource TextFillColorSecondary}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundDisabled" Color="{StaticResource TextFillColorDisabled}" />
 
     <SolidColorBrush x:Key="ComboBoxDropDownForeground" Color="{StaticResource TextFillColorPrimary}" />
     <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="{StaticResource AcrylicBackgroundFillColorDefault}" />
     <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="{StaticResource SurfaceStrokeColorFlyout}" />
-    
+
+    <SolidColorBrush x:Key="ComboBoxDropDownBackgroundPointerOver" Color="{StaticResource SubtleFillColorSecondary}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownBackgroundPointerPressed" Color="{StaticResource SubtleFillColorTertiary}" />
+    <SolidColorBrush x:Key="ComboBoxFocusedDropDownBackgroundPointerPressed" Color="{StaticResource ControlAltFillColorQuarternary}" />
+    <SolidColorBrush x:Key="ComboBoxEditableDropDownGlyphForeground" Color="{StaticResource TextFillColorSecondary}" />
+
     <SolidColorBrush x:Key="ComboBoxItemPillFillBrush" Color="{StaticResource SystemAccentColorDark1}" />
     <!--<SolidColorBrush x:Key="ComboBoxItemBorderBrush" Color="{StaticResource ControlElevationBorderBrush}" />-->
     <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected" Color="{StaticResource SubtleFillColorSecondary}" />
@@ -354,18 +377,37 @@
                 <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
             </Trigger>
 
+            <!--PointerOver state-->
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="ContentBorder" Property="Background" Value="{DynamicResource ComboBoxBackgroundPointerOver}" />
                 <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushPointerOver}" />
                 <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundPointerOver}" />
             </Trigger>
 
+            <!--Pressed state-->
             <Trigger SourceName="ToggleButton" Property="IsPressed" Value="True">
                 <Setter TargetName="ContentBorder" Property="Background" Value="{DynamicResource ComboBoxBackgroundPressed}" />
                 <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushPressed}" />
                 <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundPressed}" />                
             </Trigger>
 
+            <!--Focused state-->
+            <Trigger Property="IsFocused" Value="True">
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundFocused}" />
+                <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxDropDownGlyphForegroundFocused}" />
+            </Trigger>
+
+            <!--FocusedPressed state-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsFocused" Value="True" />
+                    <Condition SourceName="ToggleButton" Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundFocusedPressed}" />
+                <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxDropDownGlyphForegroundFocusedPressed}" />
+            </MultiTrigger>
+
+            <!--Disabled state-->
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="ContentBorder" Property="Background" Value="{DynamicResource ComboBoxBackgroundDisabled}" />
                 <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushDisabled}" />
@@ -517,35 +559,51 @@
                 <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
             </Trigger>
 
+            <!-- PointerOver state-->
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="ContentBorder" Property="Background" Value="{DynamicResource ComboBoxBackgroundPointerOver}" />
                 <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushPointerOver}" />
                 <Setter TargetName="PART_EditableTextBox" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundPointerOver}" />
             </Trigger>
 
+            <!-- Focused / TextBoxFocused -->
             <Trigger Property="IsFocused" Value="True">
+                <Setter TargetName="PART_EditableTextBox" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundFocused}" />
                 <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxEditableDropDownGlyphForeground}" />
             </Trigger>
 
+            <!--TextBoxOverlayPointerOver state-->
             <Trigger SourceName="ToggleButton" Property="IsMouseOver" Value="True">
                 <Setter TargetName="DropDownOverlay" Property="Background" Value="{DynamicResource ComboBoxDropDownBackgroundPointerOver}" />
-                <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxEditableDropDownGlyphForeground}" />
             </Trigger>
 
+            <!--TextBoxOverlayPressed-->
             <Trigger SourceName="ToggleButton" Property="IsPressed" Value="True">
                 <Setter TargetName="DropDownOverlay" Property="Background" Value="{DynamicResource ComboBoxDropDownBackgroundPointerPressed}" />
-                <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxEditableDropDownGlyphForeground}" />
             </Trigger>
 
+            <!--TextBoxFocusedOverlayPointerOver state-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsFocused" Value="True" />
+                    <Condition SourceName="ToggleButton" Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="DropDownOverlay" Property="Background" Value="{DynamicResource ComboBoxDropDownBackgroundPointerOver}" />
+                <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxEditableDropDownGlyphForeground}" />
+            </MultiTrigger>
+
+            <!-- FocusedPressed state / TextBoxFocusedOverlayPressed state -->
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsFocused" Value="True" />
                     <Condition SourceName="ToggleButton" Property="IsPressed" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="ChevronIcon" Property="Foreground" Value="{DynamicResource ComboBoxEditableDropDownGlyphForeground}" />
+                <Setter TargetName="PART_EditableTextBox" Property="TextElement.Foreground" Value="{DynamicResource ComboBoxForegroundFocusedPressed}" />
                 <Setter TargetName="DropDownOverlay" Property="Background" Value="{DynamicResource ComboBoxFocusedDropDownBackgroundPointerPressed}" />
             </MultiTrigger>
 
+            <!--Disabled state-->
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="ContentBorder" Property="Background" Value="{DynamicResource ComboBoxBackgroundDisabled}" />
                 <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushDisabled}" />
