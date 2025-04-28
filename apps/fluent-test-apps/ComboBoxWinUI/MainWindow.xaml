@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="ComboBoxWinUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComboBoxWinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:s="clr-namespace:System;assembly=System.Runtime"
+    mc:Ignorable="d"
+    Title="ComboBoxWinUI">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+        <StackPanel.Resources>
+            <local:List x:Key="FruitsList">
+                <x:String>Apple</x:String>
+                <x:String>Berry</x:String>
+                <x:String>Figs</x:String>
+                <x:String>Grapes</x:String>
+                <x:String>Kiwi</x:String>
+                <x:String>Lichti</x:String>
+                <x:String>Mango</x:String>
+                <x:String>Orange</x:String>
+            </local:List>
+        </StackPanel.Resources>
+        <StackPanel>
+            <ComboBox IsEditable="True" MinWidth="200" Margin="5">
+                <ComboBoxItem Content="Jack Daniels" IsSelected="True" />
+                <ComboBoxItem Content="Baileys" />
+                <ComboBoxItem Content="Merlot" />
+                <ComboBoxItem Content="Bombay Sapphire" />
+            </ComboBox>
+
+            <ComboBox Width="200" ItemsSource="{StaticResource FruitsList}" Margin="5"/>
+            <ComboBox Width="200" ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="1"/>
+
+            <ComboBox Height="50" Width="200" Margin="5" ItemsSource="{StaticResource FruitsList}" 
+               HorizontalAlignment="Right" VerticalContentAlignment="Bottom"/>
+
+            <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" Width="300" />
+            <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" IsEditable="True" Width="300" />
+            <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" IsEnabled="False" Width="300" />
+            <TextBox Text="Hello" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
