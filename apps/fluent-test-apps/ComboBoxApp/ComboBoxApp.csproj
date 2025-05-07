@@ -8,6 +8,6 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <Import Project="C:\work\repos\wpf\eng\wpf-debug.targets" />
+  <!--<Import Project="E:\repos\dk-wpf\eng\wpf-debug.targets" />-->
   
 </Project>

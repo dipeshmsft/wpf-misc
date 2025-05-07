@@ -8,7 +8,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/ComboBox.xaml" />-->
-                <ResourceDictionary Source="/CBS2.xaml" />
+                <!--<ResourceDictionary Source="/CBS2.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

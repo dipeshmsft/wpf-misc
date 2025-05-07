@@ -102,8 +102,8 @@
             <StaticResource x:Key="ComboBoxDropDownBackgroundPointerPressed" ResourceKey="SubtleFillColorTertiaryBrush" />
             <StaticResource x:Key="ComboBoxFocusedDropDownBackgroundPointerOver" ResourceKey="ControlFillColorTertiaryBrush" />
             <StaticResource x:Key="ComboBoxFocusedDropDownBackgroundPointerPressed" ResourceKey="ControlAltFillColorQuarternaryBrush" />
-            <!--<StaticResource x:Key="ComboBoxEditableDropDownGlyphForeground" ResourceKey="TextFillColorSecondaryBrush" />-->
-            <SolidColorBrush x:Key="ComboBoxEditableDropDownGlyphForeground" Color="Yellow" />
+            <StaticResource x:Key="ComboBoxEditableDropDownGlyphForeground" ResourceKey="TextFillColorSecondaryBrush" />
+            <!--<SolidColorBrush x:Key="ComboBoxEditableDropDownGlyphForeground" Color="Yellow" />-->
             <StaticResource x:Key="ComboBoxItemPillFillBrush" ResourceKey="AccentFillColorDefaultBrush" />
             <Thickness x:Key="ComboBoxDropdownBorderPadding">0</Thickness>
         </ResourceDictionary>
@@ -208,8 +208,8 @@
             <StaticResource x:Key="ComboBoxDropDownBackgroundPointerPressed" ResourceKey="SystemControlBackgroundListMediumBrush" />
             <StaticResource x:Key="ComboBoxFocusedDropDownBackgroundPointerOver" ResourceKey="SystemControlPageBackgroundAltMediumBrush" />
             <StaticResource x:Key="ComboBoxFocusedDropDownBackgroundPointerPressed" ResourceKey="SystemControlBackgroundListMediumBrush" />
-            <!--<StaticResource x:Key="ComboBoxEditableDropDownGlyphForeground" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />-->
-            <SolidColorBrush x:Key="ComboBoxEditableDropDownGlyphForeground" Color="Yellow" />
+            <StaticResource x:Key="ComboBoxEditableDropDownGlyphForeground" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />
+            <!--<SolidColorBrush x:Key="ComboBoxEditableDropDownGlyphForeground" Color="Yellow" />-->
             <StaticResource x:Key="ComboBoxItemPillFillBrush" ResourceKey="SystemControlHighlightListAccentLowBrush" />
             <Thickness x:Key="ComboBoxDropdownBorderPadding">0</Thickness>
         </ResourceDictionary>
