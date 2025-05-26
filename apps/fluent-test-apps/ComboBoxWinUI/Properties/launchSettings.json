@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ComboBoxWinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ComboBoxWinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
