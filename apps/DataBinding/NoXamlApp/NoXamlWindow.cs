@@ -34,8 +34,22 @@ namespace NoXamlApp
 
             sp.Children.Add(tb);
             sp.Children.Add(button);
+
+            //Button btn2 = new() { Content = "Delete TextBox" };
+            //btn2.Click += Btn2_Click;
+            //sp.Children.Add(btn2);
+            //_sp = sp;
+
             Content = sp;
         }
+
+        //private void Btn2_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TextBox _tb = _sp.Children[0] as TextBox;
+        //    _sp.Children.RemoveAt(0);
+        //}
+
+        //private StackPanel _sp;
 
         private ViewModel _vm = new();
 

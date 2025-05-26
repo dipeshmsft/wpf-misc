@@ -9,13 +9,13 @@ namespace NoXamlApp
     /// </summary>
     public partial class App : Application
     {
-        //protected override void OnStartup(StartupEventArgs e)
-        //{
-        //    base.OnStartup(e);
-        //    NoXamlWindow window = new();
-        //    window.InitializeComponent();
-        //    window.Show();
-        //}
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            NoXamlWindow window = new();
+            window.InitializeComponent();
+            window.Show();
+        }
     }
 
 }
