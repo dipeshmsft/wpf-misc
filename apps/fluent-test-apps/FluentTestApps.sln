@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxWinUI", "ComboBoxWi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewApp", "GridViewApp\GridViewApp.csproj", "{61A1702E-AA71-4BA7-AD12-4D4D20494BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreadedFluentApp", "MultiThreadedFluentApp\MultiThreadedFluentApp.csproj", "{5D18D8C3-F812-40D0-894E-B23DA11382C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{61A1702E-AA71-4BA7-AD12-4D4D20494BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A1702E-AA71-4BA7-AD12-4D4D20494BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A1702E-AA71-4BA7-AD12-4D4D20494BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D18D8C3-F812-40D0-894E-B23DA11382C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D18D8C3-F812-40D0-894E-B23DA11382C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D18D8C3-F812-40D0-894E-B23DA11382C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D18D8C3-F812-40D0-894E-B23DA11382C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

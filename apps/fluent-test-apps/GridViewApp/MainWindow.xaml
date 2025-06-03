@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GridViewApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListView ItemsSource="{Binding Cars}">
+        Title="MainWindow" Height="450" Width="800"
+        Background="#202020">
+    <StackPanel>
+        <ListView ItemsSource="{Binding Cars}" Margin="5">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Make"
@@ -17,5 +18,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
-    </Grid>
+
+        <ListView ItemsSource="{Binding Cars}" Margin="5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Make}" Margin="0 0 5 0"/>
+                        <TextBlock Text="{Binding Model}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Window>
