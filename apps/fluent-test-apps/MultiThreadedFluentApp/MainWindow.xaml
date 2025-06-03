@@ -1,0 +1,14 @@
+﻿<Window x:Class="MultiThreadedFluentApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiThreadedFluentApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ThemeMode="System">
+    <StackPanel>
+        <Button x:Name="MTLightWindow" Content="T2 Light Window" Click="MTLightWindow_Click" />
+        <Button x:Name="MTDarkWindow" Content="T2 Light Window" Click="MTDarkWindow_Click"  />
+        <Button x:Name="MTSystemWindow" Content="T2 System Window" Click="MTSystemWindow_Click" />
+    </StackPanel>
+</Window>

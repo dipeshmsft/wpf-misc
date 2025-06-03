@@ -17,13 +17,13 @@
     <CornerRadius x:Key="ComboBoxDropDownButtonBackgroundCornerRadius">4</CornerRadius>
     <CornerRadius x:Key="ComboBoxHiglightBorderCornerRadius">4</CornerRadius>
 
-    <Thickness x:Key="ComboBoxPadding">10,8,10,8</Thickness>
+    <Thickness x:Key="ComboBoxPadding">12,5,0,7</Thickness>
     <Thickness x:Key="ComboBoxBorderThemeThickness">1,1,1,1</Thickness>
     <Thickness x:Key="ComboBoxAccentBorderThemeThickness">0,0,0,2</Thickness>
     <Thickness x:Key="ComboBoxChevronMargin">8,0,10,0</Thickness>
     <Thickness x:Key="ComboBoxItemMargin">3,2,3,0</Thickness>
     <Thickness x:Key="ComboBoxItemContentMargin">10,8,8,8</Thickness>
-    <system:Double x:Key="ComboBoxChevronSize">11.0</system:Double>
+    <system:Double x:Key="ComboBoxChevronSize">10</system:Double>
     <system:Double x:Key="ComboBoxPopupMinHeight">32.0</system:Double>
     <system:String x:Key="ComboBoxChevronDownGlyph">&#xE70D;</system:String>
 
@@ -158,9 +158,7 @@
         <Setter Property="Foreground" Value="{DynamicResource ComboBoxForeground}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Border.CornerRadius" Value="0" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
