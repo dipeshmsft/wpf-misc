@@ -40,7 +40,7 @@
             <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" Width="300" />
             <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" IsEditable="True" Width="300" Height="50"/>
             <ComboBox ItemsSource="{StaticResource FruitsList}" Margin="5" SelectedIndex="4" IsEnabled="False" Width="300" />
-            <TextBox Text="Hello" Margin="5"/>
+            <TextBox Text="Hello" Margin="5"/>-->
         </StackPanel>
     </StackPanel>
 </Window>
